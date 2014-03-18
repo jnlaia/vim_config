@@ -98,3 +98,10 @@ set laststatus=2
 " Settings for jedi-vim
 " cd ~/.vim/bundle
 " git clone git://github.com/davidhalter/jedi-vim.git
+
+" Python folding
+" mkdir -p ~/.vim/ftplugin
+" wget -O ~/.vim/ftplugin/python_editing.vim
+" http://www.vim.org/scripts/download_script.php?src_id=5492
+set nofoldenable
+set foldmethod=indent

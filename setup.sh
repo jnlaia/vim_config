@@ -14,3 +14,5 @@ git clone https://github.com/kien/ctrlp.vim.git
 cd ~
 wget https://conque.googlecode.com/files/conque_2.3.vmb
 vim conque_2.3.vmb
+mkdir -p ~/.vim/ftplugin
+wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
