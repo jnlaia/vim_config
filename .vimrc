@@ -36,7 +36,7 @@ map <Leader>n <esc>:tabprevious<CR>
 map <Leader>m <esc>:tabnext<CR>
 
 " open horizontal ipython
-map <Leader>vp <esc>:vsplit<CR><leader>l<esc>:ConqueTerm python<CR>
+map <Leader>vp <esc>:ConqueTermVSplit ipython<CR>
 
 " resizing more easily
 noremap + <C-w>>
