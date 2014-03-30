@@ -144,8 +144,12 @@ map <c-n> <esc>:tabprevious<CR>
 map <c-m> <esc>:tabnext<CR>
 
 " resizing more easily
-noremap + <C-w>>
-noremap - <C-w><
+"noremap + <C-w>>
+"noremap - <C-w><
+map <kPlus> <C-W>+
+map <kMinus> <C-W>-
+map <kDivide> <c-w><
+map <kMultiply> <c-w>>
 
 " open horizontal ipython
 map <Leader>vp <esc>:ConqueTermVSplit ipython<CR>
