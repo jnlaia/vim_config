@@ -151,12 +151,23 @@ map <kMinus> <C-W>-
 map <kDivide> <c-w><
 map <kMultiply> <c-w>>
 
-" open horizontal ipython
+" open vertical ipython
 map <Leader>vp <esc>:ConqueTermVSplit ipython<CR>
+
+" open vertical ipython
+map <Leader>hp <esc>:ConqueTermSplit ipython<CR>
+
+" open vertical bash
+map <Leader>vb <esc>:ConqueTermVSplit bash<CR>
 
 " open new tab
 map <leader>t <Esc>:tabnew<CR>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Python breakpoints
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <silent> <leader>b oimport pdb; pdb.set_trace()<esc>
+map <silent> <leader>B Oimport pdb; pdb.set_trace()<esc>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Status line
