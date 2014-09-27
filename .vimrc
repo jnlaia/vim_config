@@ -22,12 +22,14 @@
 " wget -O ~/.vim/ftplugin/python_editing.vim
 " http://www.vim.org/scripts/download_script.php?src_id=5492
 
+" cd ~/.vim/bundle && \
+" git clone https://github.com/scrooloose/syntastic.git
+
 " Setup Pathogen to manage your plugins
 " mkdir -p ~/.vim/autoload ~/.vim/bundle
 " curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim
 " Now you can install any plugin into a .vim/bundle/plugin-name/ folder
 call pathogen#infect()
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -54,6 +56,8 @@ set number
 " Show cursor line
 set cursorline
 
+" PEP8 style checker
+let g:syntastic_python_checkers = ['pep8']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -100,6 +104,9 @@ set si "Smart indent
 vnoremap < <gv  " better indentation
 vnoremap > >gv  " better indentation
 
+" comment and uncomment blocks of lines
+vnoremap # :s/^/# <CR> :noh <CR>
+vnoremap ## :s/^# //<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors, fonts and appearence
@@ -164,10 +171,15 @@ map <Leader>vb <esc>:ConqueTermVSplit bash<CR>
 map <leader>t <Esc>:tabnew<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Python breakpoints
+" => Python run and debug 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <silent> <leader>b oimport pdb; pdb.set_trace()<esc>
-map <silent> <leader>B Oimport pdb; pdb.set_trace()<esc>
+
+" Insert and remove breakpoints
+map <silent> <leader>b oimport ipdb; ipdb.set_trace()<esc>
+map <silent> <leader>B Oimport ipdb; ipdb.set_trace()<esc>
+
+" Run python code
+autocmd BufRead *.py nmap <F5> :w <CR> :!python %<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Status line
