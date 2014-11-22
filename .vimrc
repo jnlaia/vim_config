@@ -179,6 +179,7 @@ map <silent> <leader>b oimport ipdb; ipdb.set_trace()<esc>
 map <silent> <leader>B Oimport ipdb; ipdb.set_trace()<esc>
 
 " Run python code
+"autocmd BufRead *.py nmap <F5> :w <CR> :!python %<CR>
 autocmd BufRead *.py nmap <F5> :w <CR> :!python %<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
